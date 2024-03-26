@@ -48,8 +48,7 @@ const ListedBooks = () => {
                 <div role="tablist" className="tabs tabs-lifted grid-span-3">
                     <input onClick={handleReadBooks} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read Books" />
 
-
-                    <input onClick={handleWishList} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist Books" checked />
+                    <input onClick={handleWishList} type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist Books"  />
                 </div>
             </div>
 
