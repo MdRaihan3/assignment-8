@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBooks } from "../../localStorage";
+import { saveBooks, saveWishList } from "../../localStorage";
 
 const BookDetails = () => {
     const books = useLoaderData();
@@ -11,6 +11,9 @@ const BookDetails = () => {
 
     const handleRead = () => {
         saveBooks(book)
+    }
+    const handleWishList = () => {
+        saveWishList(book)
     }
 
     return (
@@ -47,7 +50,7 @@ const BookDetails = () => {
                 </div>
                 <div>
                     <button onClick={handleRead} className="border-2 rounded-lg px-4 py-2 mr-5">Read</button>
-                    <button  className="bg-[#50B1C9] rounded-lg px-4 py-2">Wishlist</button>
+                    <button onClick={handleWishList} className="bg-[#50B1C9] rounded-lg px-4 py-2">Wishlist</button>
                 </div>
             </div>
         </div>

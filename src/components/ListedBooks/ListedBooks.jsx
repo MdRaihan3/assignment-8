@@ -1,15 +1,23 @@
 import { useEffect, useState } from "react";
-import { getStoredBooks } from "../../localStorage";
+import { getStoredBooks, storedWishListBooks } from "../../localStorage";
 
 const ListedBooks = () => {
     const [readBooks, setReadBooks] = useState([]);
+    const [wLBooks, setWLBooks] = useState([])
     const [displayBooks, setDisplayBooks] = useState([]);
 
     useEffect(() => {
         const storedReadBooks = getStoredBooks();
+        const storedWLBooks = storedWishListBooks();
+        setWLBooks(storedWLBooks)
         setReadBooks(storedReadBooks)
         setDisplayBooks(storedReadBooks)
-    }, [])
+    }, []);
+
+
+const handleWishList = () =>{
+    setDisplayBooks(wLBooks)
+}
 
     const handleFilter = filter => {
         if (filter === 'rating') {
@@ -19,15 +27,19 @@ const ListedBooks = () => {
     }
     console.log(displayBooks)
     return (
-        <div>
+        <div className="border-4">
             <h1 className="w-full text-center py-4 text-3xl rounded-2xl font-bold bg-[#1313130D]"> Books</h1>
-            <details className="dropdown">
+            <details className="dropdown w-full text-center">
                 <summary className="m-1 btn">Sort By</summary>
                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
                     <li onClick={() => handleFilter('rating')}><a>Rating</a></li>
                     <li><a>Item 2</a></li>
                 </ul>
             </details>
+            <div>
+                <div>Read Books</div>
+                <div onClick={handleWishList}>Wishlist Books</div>
+            </div>
             <div>
                 <ul>
                     {
