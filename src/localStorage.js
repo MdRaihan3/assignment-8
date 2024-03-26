@@ -17,6 +17,7 @@ const saveBooks = book =>{
     else{
         getStoredBooksToSave.push(book);
         localStorage.setItem('books', JSON.stringify(getStoredBooksToSave))
+        alert('new added')
     }
 }
 

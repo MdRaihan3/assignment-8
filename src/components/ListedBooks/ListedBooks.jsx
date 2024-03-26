@@ -12,7 +12,7 @@ const ListedBooks = () => {
     }, [])
 
     const handleFilter = filter => {
-        if (filter === 'Rating') {
+        if (filter === 'rating') {
             const ratingBooks = readBooks.sort((a, b) => (a.rating - b.rating))
             setDisplayBooks(ratingBooks)
         }
@@ -24,7 +24,7 @@ const ListedBooks = () => {
             <details className="dropdown">
                 <summary className="m-1 btn">Sort By</summary>
                 <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
-                    <li onClick={() => handleFilter('Rating')}><a>Rating</a></li>
+                    <li onClick={() => handleFilter('rating')}><a>Rating</a></li>
                     <li><a>Item 2</a></li>
                 </ul>
             </details>
