@@ -1,0 +1,81 @@
+[
+    {
+      "bookId": 1,
+      "bookName": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "image": "https://i.ibb.co/kg3xRMG/img1.jpg",
+      "review": "A timeless classic depicting the decadence of the Jazz Age.",
+      "totalPages": 218,
+      "rating": 4.5,
+      "category": "Fiction",
+      "tags": ["Classic", "American Literature"],
+      "publisher": "Charles Scribner's Sons",
+      "yearOfPublishing": 1925
+    },
+    {
+      "bookId": 2,
+      "bookName": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "image": "https://i.ibb.co/9v31gMn/img2.jpg",
+      "review": "A powerful narrative addressing racial injustice and moral growth.",
+      "totalPages": 324,
+      "rating": 4.8,
+      "category": "Fiction",
+      "tags": ["Classic", "Southern Gothic"],
+      "publisher": "J. B. Lippincott & Co.",
+      "yearOfPublishing": 1960
+    },
+    {
+      "bookId": 3,
+      "bookName": "1984",
+      "author": "George Orwell",
+      "image": "https://i.ibb.co/ThmfZkD/img3.jpg",
+      "review": "A dystopian masterpiece illustrating the perils of totalitarianism.",
+      "totalPages": 328,
+      "rating": 4.6,
+      "category": "Fiction",
+      "tags": ["Dystopian", "Political Fiction"],
+      "publisher": "Secker & Warburg",
+      "yearOfPublishing": 1949
+    },
+    {
+      "bookId": 4,
+      "bookName": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "image": "https://i.ibb.co/YWCMmWV/img4.png",
+      "review": "A seminal work capturing the disillusionment of youth.",
+      "totalPages": 224,
+      "rating": 4.4,
+      "category": "Fiction",
+      "tags": ["Coming-of-age", "American Literature"],
+      "publisher": "Little, Brown and Company",
+      "yearOfPublishing": 1951
+    },
+    {
+      "bookId": 5,
+      "bookName": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "image": "https://i.ibb.co/TRh3Y35/img5.png",
+      "review": "A psychological thriller exploring guilt, morality, and redemption.",
+      "totalPages": 545,
+      "rating": 4.7,
+      "category": "Fiction",
+      "tags": ["Psychological", "Russian Literature"],
+      "publisher": "The Russian Messenger",
+      "yearOfPublishing": 1866
+    },
+    {
+      "bookId": 6,
+      "bookName": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "image": "https://i.ibb.co/BqJN7n7/img6.jpg",
+      "review": "A hilarious and imaginative journey through space and time.",
+      "totalPages": 224,
+      "rating": 4.5,
+      "category": "Science Fiction",
+      "tags": ["Humor", "Adventure"],
+      "publisher": "Pan Books",
+      "yearOfPublishing": 1979
+    }
+  ]
+  
