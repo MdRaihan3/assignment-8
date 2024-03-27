@@ -28,34 +28,60 @@ const ListedBooks = () => {
     const handleReadBooks = () => {
         setDisplayBooks(readBooks)
     }
-
     const handleFilter = filter => {
         if (filter === 'rating') {
-            const ratingBooks = readBooks.sort((a, b) => (b.rating - a.rating))
-            const filteredRating = ratingBooks.filter(fr => fr.rating > 0)
-            setDisplayBooks(filteredRating)
+            if(readBooks.length > 0){
+                const ratingBooks = readBooks.sort((a, b) => (b.rating - a.rating))
+                const filteredRating = ratingBooks.filter(fr => fr.rating > 0)
+                setDisplayBooks(filteredRating)
+                if(wLBooks.length > 0){
+                    const ratingWLBooks = wLBooks.sort((a, b) => (b.rating - a.rating))
+                    const filteredWLRating = ratingWLBooks.filter(fr => fr.rating > 0)
+                    setDisplayBooks(filteredWLRating)
+                }
+            }
+            else if(wLBooks.length > 0){
+                const ratingWLBooks = wLBooks.sort((a, b) => (b.rating - a.rating))
+                    const filteredWLRating = ratingWLBooks.filter(fr => fr.rating > 0)
+                    setDisplayBooks(filteredWLRating)
+            }
 
-            const ratingWLBooks = wLBooks.sort((a, b) => (b.rating - a.rating))
-            const filteredWLRating = ratingWLBooks.filter(fr => fr.rating > 0)
-            setDisplayBooks(filteredWLRating)
+           
         }
         else if (filter === 'pages') {
-            const pageBooks = readBooks.sort((a, b) => (b.totalPages - a.totalPages));
-            const filteredPages = pageBooks.filter(pb => pb.totalPages > 0)
-            setDisplayBooks(filteredPages)
-
-            const pageWLBooks = wLBooks.sort((a, b) => (b.totalPages - a.totalPages));
-            const filteredWLPages = pageWLBooks.filter(pb => pb.totalPages > 0)
-            setDisplayBooks(filteredWLPages)
+            if(readBooks.length > 0){
+                const pageBooks = readBooks.sort((a, b) => (b.totalPages - a.totalPages));
+                const filteredPages = pageBooks.filter(pb => pb.totalPages > 0)
+                setDisplayBooks(filteredPages)
+                if(wLBooks.length > 0){
+                    const pageWLBooks = wLBooks.sort((a, b) => (b.totalPages - a.totalPages));
+                    const filteredWLPages = pageWLBooks.filter(pb => pb.totalPages > 0)
+                    setDisplayBooks(filteredWLPages)
+                }
+            }
+            else if(wLBooks.length > 0){
+                const pageWLBooks = wLBooks.sort((a, b) => (b.totalPages - a.totalPages));
+                    const filteredWLPages = pageWLBooks.filter(pb => pb.totalPages > 0)
+                    setDisplayBooks(filteredWLPages)
+            }        
         }
-        else if(filter === 'year'){
-            const yearBooks = readBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
-            const filteredYear = yearBooks.filter(yb => yb.yearOfPublishing > 0)
-            setDisplayBooks(filteredYear)
 
-            const yearWLBooks = wLBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
-            const filteredWLYear = yearWLBooks.filter(yb => yb.yearOfPublishing > 0)
-            setDisplayBooks(filteredWLYear)
+        else if(filter === 'year'){
+            if(readBooks.length > 0){
+                const yearBooks = readBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
+                const filteredYear = yearBooks.filter(yb => yb.yearOfPublishing > 0)
+                setDisplayBooks(filteredYear)
+                if(wLBooks.length > 0){
+                    const yearWLBooks = wLBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
+                    const filteredWLYear = yearWLBooks.filter(yb => yb.yearOfPublishing > 0)
+                    setDisplayBooks(filteredWLYear)
+                }
+            }
+            else if(wLBooks.length > 0){
+                const yearWLBooks = wLBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
+                    const filteredWLYear = yearWLBooks.filter(yb => yb.yearOfPublishing > 0)
+                    setDisplayBooks(filteredWLYear)
+            }      
         }
         
     }
