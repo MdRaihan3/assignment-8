@@ -3,7 +3,7 @@
 # [Live Site Link](www.google.com)
 
 
-** features and characteristics **
+** features and characteristics of this website **
 - easy to use for users
 - responsive for mobile
 - fast performance
