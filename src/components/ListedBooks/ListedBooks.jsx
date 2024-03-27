@@ -22,8 +22,6 @@ const ListedBooks = () => {
         setWLBooks(storedWLBooks)
     }, [])
     
-    console.log(wLBooks)
-
     const handleWishList = () => {
         setDisplayBooks(wLBooks)
     }
@@ -33,20 +31,34 @@ const ListedBooks = () => {
 
     const handleFilter = filter => {
         if (filter === 'rating') {
-            const ratingBooks = readBooks.sort((a, b) => (a.rating - b.rating))
-            setDisplayBooks(ratingBooks)
+            const ratingBooks = readBooks.sort((a, b) => (b.rating - a.rating))
+            const filteredRating = ratingBooks.filter(fr => fr.rating > 0)
+            setDisplayBooks(filteredRating)
+
+            const ratingWLBooks = wLBooks.sort((a, b) => (b.rating - a.rating))
+            const filteredWLRating = ratingWLBooks.filter(fr => fr.rating > 0)
+            setDisplayBooks(filteredWLRating)
         }
         else if (filter === 'pages') {
-            const pageBooks = readBooks.sort((a, b) => (a.totalPages - b.totalPages));
-            setDisplayBooks(pageBooks)
+            const pageBooks = readBooks.sort((a, b) => (b.totalPages - a.totalPages));
+            const filteredPages = pageBooks.filter(pb => pb.totalPages > 0)
+            setDisplayBooks(filteredPages)
+
+            const pageWLBooks = wLBooks.sort((a, b) => (b.totalPages - a.totalPages));
+            const filteredWLPages = pageWLBooks.filter(pb => pb.totalPages > 0)
+            setDisplayBooks(filteredWLPages)
         }
         else if(filter === 'year'){
-            const yearBooks = readBooks.sort((a,b) => (a.yearOfPublishing - b.yearOfPublishing));
-            setDisplayBooks(yearBooks)
+            const yearBooks = readBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
+            const filteredYear = yearBooks.filter(yb => yb.yearOfPublishing > 0)
+            setDisplayBooks(filteredYear)
+
+            const yearWLBooks = wLBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
+            const filteredWLYear = yearWLBooks.filter(yb => yb.yearOfPublishing > 0)
+            setDisplayBooks(filteredWLYear)
         }
+        
     }
-    console.log(displayBooks)
-    console.log(displayBooks.map(b => b.rating))
     return (
         <div>
             <h1 className="w-full text-center py-4 text-3xl rounded-2xl font-bold bg-[#1313130D]"> Books</h1>
@@ -57,7 +69,7 @@ const ListedBooks = () => {
                     <li onClick={() => handleFilter('rating')}><a>Rating</a></li>
                     <li onClick={() => handleFilter('pages')}><a>Number of pages</a></li>
                     <li onClick={() => handleFilter('year')}><a>Publisher year</a></li>
-                </ul>
+               </ul>
             </details>
 
             <div className="grid grid-cols-5">
