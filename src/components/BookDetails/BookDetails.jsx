@@ -16,7 +16,7 @@ const BookDetails = () => {
     }
 
     return (
-        <div className="grid grid-cols-2">
+        <div className="md:grid grid-cols-2">
             <div className=" p-20 justify-center bg-[#1313130D] col-span-1 rounded-2xl ">
                 <img className="w-full" src={image} alt="" />
             </div>

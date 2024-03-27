@@ -83,7 +83,6 @@ const ListedBooks = () => {
                     setDisplayBooks(filteredWLYear)
             }      
         }
-        
     }
     return (
         <div>

@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom";
+import './NavBar.css'
 
 const NavBar = () => {
     const links = <>
         <li className="mr-4"><NavLink to='/'>Home</NavLink></li>
         <li className="mr-4"><NavLink to='/bookslist'>Listed Books</NavLink></li>
-        <li><NavLink to='/chart'>Pages to Read</NavLink></li>
-        
+        <li id="chartpage"><NavLink to='/chart'>Pages to Read</NavLink></li>       
     </>
     return (
         <div className="navbar bg-base-100 mb-10">
@@ -25,7 +25,7 @@ const NavBar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div id="navv" className="navbar-end">
                 <a className="btn bg-[#23BE0A] text-white font-semibold">Sign In</a>
                 <a className="btn ml-4 bg-[#59C6D2] text-white font-semibold">Sign Up</a>
             </div>

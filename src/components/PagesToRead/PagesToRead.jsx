@@ -28,7 +28,7 @@ const PagesToRead = () => {
     }, [])
 
     return (
-        <div>
+        <div className="">
             <BarChart width={1100} height={500} data={readBoooks} margin={{
                     top: 20, right: 30, left: 20, bottom: 5, }}>
                 <CartesianGrid strokeDasharray="3 3" />
