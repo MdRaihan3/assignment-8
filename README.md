@@ -1,8 +1,9 @@
 # Assignment 8
 
-# [site link](www.google.com)
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+# [Live Site Link](www.google.com)
 
+
+** features and characteristics **
 - easy to use for users
 - responsive for mobile
 - fast performance
