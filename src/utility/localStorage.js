@@ -1,4 +1,4 @@
-
+import swal from 'sweetalert';
 
 const getStoredBooks = () => {
     const storedBooks = localStorage.getItem('books');
@@ -12,15 +12,13 @@ const saveBooks = book => {
     const exists = getStoredBooksToSave.find(item => item.bookId === book.bookId);
     if (!exists) {
         getStoredBooksToSave.push(book);
-        localStorage.setItem('books', JSON.stringify(getStoredBooksToSave))
+        localStorage.setItem('books', JSON.stringify(getStoredBooksToSave));
+        swal('added in read books list')
     }
     else {
-        alert('exist in read list')
+        swal('Already exist in read books list')
     }
 }
-
-
-
 
 const storedWishListBooks = () => {
     const wishListBooks = localStorage.getItem('wishlist');
@@ -33,19 +31,20 @@ const saveWishList = book => {
     const getReadList = getStoredBooks()
     const wishListExistInRead = getReadList.find(itm => itm.bookId === book.bookId);
     if (wishListExistInRead) {
-        alert('exist in read-list, can not add in wish list')
+        swal('Already exist in read books list, can not add in wish books list')
     }
     else {
         const getWishList = storedWishListBooks()
         const wishListExist = getWishList.find(b => b.bookId === book.bookId)
         if (wishListExist) {
-            alert('exist in wishlist, can not add in wish list')
+            swal('Already exist in wish books list')
         }
         else {
             getWishList.push(book)
             localStorage.setItem('wishlist', JSON.stringify(getWishList))
+            swal('added in wish books list')
         }
     }
 }
 
-export{getStoredBooks, saveBooks, storedWishListBooks, saveWishList }
+export { getStoredBooks, saveBooks, storedWishListBooks, saveWishList }
