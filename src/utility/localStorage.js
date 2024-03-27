@@ -10,29 +10,16 @@ const getStoredBooks = () => {
 const saveBooks = book => {
     const getStoredBooksToSave = getStoredBooks();
     const exists = getStoredBooksToSave.find(item => item.bookId === book.bookId);
-
-    const getWishList = storedWishListBooks()
-    const wishListExist = getWishList.find(b => b.bookId === book.bookId)
-    if (wishListExist) {
-        localStorage.removeItem('wishlist', JSON.stringify(getWishList))
-        if (exists) {
-            alert('Data already added')
-        }
-        else {
-            getStoredBooksToSave.push(book);
-            localStorage.setItem('books', JSON.stringify(getStoredBooksToSave))
-            alert('new added')
-        }
-    }
-    else if (exists) {
-        alert('Data already added')
-    }
-    else {
+    if (!exists) {
         getStoredBooksToSave.push(book);
         localStorage.setItem('books', JSON.stringify(getStoredBooksToSave))
-        alert('new added')
+    }
+    else {
+        alert('exist in read list')
     }
 }
+
+
 
 
 const storedWishListBooks = () => {
@@ -46,13 +33,13 @@ const saveWishList = book => {
     const getReadList = getStoredBooks()
     const wishListExistInRead = getReadList.find(itm => itm.bookId === book.bookId);
     if (wishListExistInRead) {
-        alert('exist in read-list')
+        alert('exist in read-list, can not add in wish list')
     }
     else {
         const getWishList = storedWishListBooks()
         const wishListExist = getWishList.find(b => b.bookId === book.bookId)
         if (wishListExist) {
-            alert('exist in wishlist')
+            alert('exist in wishlist, can not add in wish list')
         }
         else {
             getWishList.push(book)
@@ -61,4 +48,4 @@ const saveWishList = book => {
     }
 }
 
-export { getStoredBooks, saveBooks, storedWishListBooks, saveWishList }
+export{getStoredBooks, saveBooks, storedWishListBooks, saveWishList }

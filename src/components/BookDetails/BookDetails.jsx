@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveBooks, saveWishList } from "../../localStorage";
+import { saveBooks, saveWishList } from "../../utility/localStorage";
 
 const BookDetails = () => {
     const books = useLoaderData();
@@ -8,7 +8,6 @@ const BookDetails = () => {
     const intId = parseInt(id)
     const book = books.find(book => book.bookId === intId)
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = book;
-
     const handleRead = () => {
         saveBooks(book)
     }
