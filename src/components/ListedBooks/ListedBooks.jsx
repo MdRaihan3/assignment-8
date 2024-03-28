@@ -30,57 +30,58 @@ const ListedBooks = () => {
     }
     const handleFilter = filter => {
         if (filter === 'rating') {
+            if(wLBooks.length > 0){
+                const ratingWLBooks = wLBooks.sort((a, b) => (b.rating - a.rating))
+                const filteredWLRating = ratingWLBooks.filter(fr => fr.rating > 0)
+                setDisplayBooks(filteredWLRating)
             if(readBooks.length > 0){
                 const ratingBooks = readBooks.sort((a, b) => (b.rating - a.rating))
                 const filteredRating = ratingBooks.filter(fr => fr.rating > 0)
                 setDisplayBooks(filteredRating)
-                if(wLBooks.length > 0){
-                    const ratingWLBooks = wLBooks.sort((a, b) => (b.rating - a.rating))
-                    const filteredWLRating = ratingWLBooks.filter(fr => fr.rating > 0)
-                    setDisplayBooks(filteredWLRating)
+                
                 }
             }
-            else if(wLBooks.length > 0){
-                const ratingWLBooks = wLBooks.sort((a, b) => (b.rating - a.rating))
-                    const filteredWLRating = ratingWLBooks.filter(fr => fr.rating > 0)
-                    setDisplayBooks(filteredWLRating)
+            else if(readBooks.length > 0){
+                const ratingBooks = readBooks.sort((a, b) => (b.rating - a.rating))
+                const filteredRating = ratingBooks.filter(fr => fr.rating > 0)
+                setDisplayBooks(filteredRating)
             }
 
            
         }
         else if (filter === 'pages') {
+            if(wLBooks.length > 0){
+                const pageWLBooks = wLBooks.sort((a, b) => (b.totalPages - a.totalPages));
+                const filteredWLPages = pageWLBooks.filter(pb => pb.totalPages > 0)
+                setDisplayBooks(filteredWLPages)
             if(readBooks.length > 0){
                 const pageBooks = readBooks.sort((a, b) => (b.totalPages - a.totalPages));
                 const filteredPages = pageBooks.filter(pb => pb.totalPages > 0)
-                setDisplayBooks(filteredPages)
-                if(wLBooks.length > 0){
-                    const pageWLBooks = wLBooks.sort((a, b) => (b.totalPages - a.totalPages));
-                    const filteredWLPages = pageWLBooks.filter(pb => pb.totalPages > 0)
-                    setDisplayBooks(filteredWLPages)
+                setDisplayBooks(filteredPages)             
                 }
             }
-            else if(wLBooks.length > 0){
-                const pageWLBooks = wLBooks.sort((a, b) => (b.totalPages - a.totalPages));
-                    const filteredWLPages = pageWLBooks.filter(pb => pb.totalPages > 0)
-                    setDisplayBooks(filteredWLPages)
+            else if(readBooks.length > 0){
+                const pageBooks = readBooks.sort((a, b) => (b.totalPages - a.totalPages));
+                const filteredPages = pageBooks.filter(pb => pb.totalPages > 0)
+                setDisplayBooks(filteredPages)
             }        
         }
 
         else if(filter === 'year'){
+            if(wLBooks.length > 0){
+                const yearWLBooks = wLBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
+                const filteredWLYear = yearWLBooks.filter(yb => yb.yearOfPublishing > 0)
+                setDisplayBooks(filteredWLYear)
             if(readBooks.length > 0){
                 const yearBooks = readBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
                 const filteredYear = yearBooks.filter(yb => yb.yearOfPublishing > 0)
-                setDisplayBooks(filteredYear)
-                if(wLBooks.length > 0){
-                    const yearWLBooks = wLBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
-                    const filteredWLYear = yearWLBooks.filter(yb => yb.yearOfPublishing > 0)
-                    setDisplayBooks(filteredWLYear)
+                setDisplayBooks(filteredYear)             
                 }
             }
-            else if(wLBooks.length > 0){
-                const yearWLBooks = wLBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
-                    const filteredWLYear = yearWLBooks.filter(yb => yb.yearOfPublishing > 0)
-                    setDisplayBooks(filteredWLYear)
+            else if(readBooks.length > 0){
+                const yearBooks = readBooks.sort((a,b) => (b.yearOfPublishing - a.yearOfPublishing));
+                const filteredYear = yearBooks.filter(yb => yb.yearOfPublishing > 0)
+                setDisplayBooks(filteredYear)
             }      
         }
     }

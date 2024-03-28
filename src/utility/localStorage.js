@@ -14,6 +14,7 @@ const saveBooks = book => {
         getStoredBooksToSave.push(book);
         localStorage.setItem('books', JSON.stringify(getStoredBooksToSave));
         swal('added in read books list')
+        
     }
     else {
         swal('Already exist in read books list')
